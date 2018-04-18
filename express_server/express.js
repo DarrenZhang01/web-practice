@@ -1,3 +1,4 @@
+"use strict"
 /* A simple web server using express */
 let express = require("express");
 // Construct a new express instance

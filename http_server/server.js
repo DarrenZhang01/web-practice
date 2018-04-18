@@ -1,3 +1,4 @@
+"use strict"
 /* A very simple http server using nodejs */
 let http = require("http");
 
