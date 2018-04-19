@@ -1,0 +1,31 @@
+<!-- html for triggering the browser side html -->
+<html>
+    <head>
+        <title>ajax test</title>
+    </head>
+    <body>
+        <h1 id="title">This is an ajax request test!</h1>
+        <div>
+            <textarea id="input"></textarea>
+            <button id="button" type="button">click</button>
+        </div>
+        <script src="jquery-3.3.1.js"></script>
+        <script type="text/javascript">
+            $('#button').click(function () {
+                /* When the button is clicked, clear the content in the
+                    textarea and put that into the ajax request */
+                let content = $('#input').val();
+                alert("The content you just input: " + content);
+                $.ajax({
+                    url: "http://www.darrenzhang.com:4001/test/ajax",
+                    method: 'POST',
+                    data: content,
+                    success: function () {
+                        $('#input').val(null);
+                        alert("The ajax request is successfully received!");
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>
