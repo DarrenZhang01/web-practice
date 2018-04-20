@@ -25,6 +25,7 @@ var bodyParser = require('body-parser');
 app.use(bodyParser.text({ type: 'text/html' }));
 /* Access Allow Control Origin (CORS) Set Up */
 app.use(function (req, res, next) {
+	
 	res.setHeader('Access-Control-Allow-Origin', 'http://www.darrenzhang.com');
 	res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
 	res.setHeader('Access-Control-Allow-Credentials', true);
@@ -34,7 +35,7 @@ app.use(function (req, res, next) {
 });
 
 app.post('/test/ajax', function (request, response) {
-    console.log("The request is received!");
+	console.log("The request is received!");
     console.log("The url is: " + request.url);
     // console.log("The request data: " + request.body.data);
     let body;
