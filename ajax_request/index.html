@@ -6,7 +6,9 @@
     <body>
         <h1 id="title">This is an ajax request test!</h1>
         <div>
-            <textarea id="input"></textarea>
+            <textarea id="input1"></textarea>
+            <textarea id="input2"></textarea>
+            <textarea id="input3"></textarea>
             <button id="button" type="button">click</button>
         </div>
         <script src="jquery-3.3.1.js"></script>
@@ -14,14 +16,27 @@
             $('#button').click(function () {
                 /* When the button is clicked, clear the content in the
                     textarea and put that into the ajax request */
-                let content = $('#input').val();
-                alert("The content you just input: " + content);
+                let content1 = $('#input1').val();
+                let content2 = $('#input2').val();
+                let content3 = $('#input3').val();
+                alert("The first content you just input: " + content1);
+                alert("The second content you just input: " + content2);
+                alert("The third content you just input: " + content3);
+                let object = {
+                    "object1": content1,
+                    "object2": content2,
+                    "object3": content3
+                };
+                let jsobject = JSON.stringify(object);
                 $.ajax({
                     url: "http://www.darrenzhang.com:4001/test/ajax",
                     method: 'POST',
-                    data: content,
+                    contentType: 'application/json',
+                    data: jsobject,
                     success: function () {
-                        $('#input').val(null);
+                        $('#input1').val(null);
+                        $('#input2').val(null);
+                        $('#input3').val(null);
                         alert("The ajax request is successfully received!");
                     }
                 });

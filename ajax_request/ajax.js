@@ -38,13 +38,17 @@ app.post('/test/ajax', function (request, response) {
     console.log("The request is received!");
     console.log("The url is: " + request.url);
     // console.log("The request data: " + request.body.data);
-    let body = [];
+    let body;
     request.on('data', function (chunk) {
-        body.push(chunk);
+		console.log("The JSON obejct: " + chunk);
+		let body = JSON.parse(chunk);
+		console.log("The first item the user input: " + body.object1);
+		console.log("The first item the user input: " + body.object2);
+		console.log("The first item the user input: " + body.object3);
     });
-    request.on('end', function () {
-        console.log("The body: " + Buffer.concat(body).toString());
-    });
+    // request.on('end', function () {
+    //     console.log("The body: " + Buffer.concat(body).toString());
+    // });
     response.status(200);
     response.send("Successful!");
     response.end();
