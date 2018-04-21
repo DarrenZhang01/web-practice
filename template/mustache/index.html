@@ -1,0 +1,42 @@
+<!-- This HTML file is a simple display of the Mustache template for the
+ data binding -->
+ <html>
+    <head>
+        <title>Mustache Show</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/oj.mustache/0.7.2/oj.mustache.min.js"></script>
+        <script src="jquery-3.3.1.js"></script>
+    </head>
+    <body>
+        <div>
+            <h1 id="title">{{name}}</h1>
+            <ul id="list">
+                {{#examples}}
+                    <li>{{subtitle}}</li>
+                {{/examples}}
+            </ul>
+        </div>
+        <!-- One Simple example for data binding -->
+        <script type="text/javascript">
+            let jsonp = {"name": "DarrenZhang"};
+            let result = Mustache.to_html($('#title').html(), jsonp);
+            alert("The result is: " + result);
+            $('#title').html(result);
+
+            let example = {
+                "examples": [
+                    {
+                        "subtitle": "how to study more efficiently",
+                        "time": "other information"
+                    },
+                    {
+                        "subtitle": "Look at this article",
+                        "time": "other information"
+                    }
+                ]
+            };
+            let array = Mustache.to_html($('#list').html(), example);
+            alert("array: " + array);
+            $('#list').html(array);
+        </script>
+    </body>
+ </html>
