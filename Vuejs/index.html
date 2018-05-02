@@ -8,14 +8,29 @@
     </head>
     <body>
         <h1 id="embedded">{{ pagetitle }}</h1>
+        <div id="binding">
+            <h2 v-bind:title="text">
+                {{ text1 }}
+            </h2>
+        </div>
         <script type="text/javascript">
             "use strict"
-            let app = new Vue({
+            let app = new Vue ({
                 el: '#embedded',
                 data: {
                     pagetitle: "This is a simple showcase of Vuejs!"
                 }
             });
+            app.pagetitle = "Ooooops, it has been changed!";
+
+            let app0 = new Vue ({
+                el: '#binding',
+                data: {
+                    text: "Data binding test, the time is " + new Date().toLocaleString(),
+                    text1: "Look at the dynamically binding instruction!"
+                }
+            });
+            app0.text = "The message is updated again!";
         </script>
     </body>
 </html>
