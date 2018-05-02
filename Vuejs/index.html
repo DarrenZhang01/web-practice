@@ -28,6 +28,14 @@
         <div id="event">
             <h2 v-on:click="onclick">{{ time }}</h2>
         </div>
+
+        <!-- Below is the two-way data binding between the user input and the
+            application status -->
+        <h1>Two-way data binding between user input and the app status</h1>
+        <div id="app-3">
+            <h2>{{ input }}</h2>
+            <input v-model="input">
+        </div>
         <script type="text/javascript">
             "use strict"
             let app = new Vue ({
@@ -74,6 +82,14 @@
                     onclick: function () {
                         this.time = "Time is now " + new Date();
                     }
+                }
+            });
+
+            /* Two-way data binding between the user input and the app status */
+            let app3 = new Vue ({
+                el: '#app-3',
+                data: {
+                    input: "initial one"
                 }
             });
         </script>
