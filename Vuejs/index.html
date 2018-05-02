@@ -17,6 +17,13 @@
                 {{ text2 }}
             </p>
         </div>
+        <div id="list">
+            <ul>
+                <li v-for="item in items">
+                    {{ item.text }}
+                </li>
+            </ul>
+        </div>
         <script type="text/javascript">
             "use strict"
             let app = new Vue ({
@@ -41,13 +48,17 @@
                 false and text2 will be hidden */
             // app0.seen = false;
 
-            // let app1 = new Vue ({
-            //     el: '#condition',
-            //     data: {
-            //         seen: true,
-            //         text2: "Test the condition of Vuejs!"
-            //     }
-            // });
+            let app1 = new Vue ({
+                el: '#list',
+                data: {
+                    items: [
+                        {text: "I want to do the job well!"},
+                        {text: "Web tech is worthwhile to learn!"},
+                        {text: "A wonderful future is waiting for you!"}
+                    ]
+                }
+            });
+            app1.items.push({text: "Oh, this is newly added!"});
         </script>
     </body>
 </html>
