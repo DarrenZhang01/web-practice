@@ -24,6 +24,10 @@
                 </li>
             </ul>
         </div>
+        <!-- The following is for user interaction -->
+        <div id="event">
+            <h2 v-on:click="onclick">{{ time }}</h2>
+        </div>
         <script type="text/javascript">
             "use strict"
             let app = new Vue ({
@@ -59,6 +63,19 @@
                 }
             });
             app1.items.push({text: "Oh, this is newly added!"});
+
+            /* Click function below */
+            let app2 = new Vue ({
+                el: '#event',
+                data: {
+                    time: "Click me to view the changes!"
+                },
+                methods: {
+                    onclick: function () {
+                        this.time = "Time is now " + new Date();
+                    }
+                }
+            });
         </script>
     </body>
 </html>
