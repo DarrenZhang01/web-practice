@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<!-- This file is for practicing the use of Vuejs
+    partially referred to "https://cn.vuejs.org/v2/guide/" -->
+<html>
+    <head>
+        <title>Vuejs</title>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <h1 id="embedded">{{ pagetitle }}</h1>
+        <script type="text/javascript">
+            "use strict"
+            let app = new Vue({
+                el: '#embedded',
+                data: {
+                    pagetitle: "This is a simple showcase of Vuejs!"
+                }
+            });
+        </script>
+    </body>
+</html>
