@@ -1,5 +1,5 @@
 <!-- This file is for the use of PHP -->
-<!-- Partially referred to "http://www.runoob.com/php/php-tutorial.html" -->
+<!-- Referred to "http://www.runoob.com/php/php-tutorial.html" -->
 <!DOCTYPE HTML>
 <html>
     <head>
