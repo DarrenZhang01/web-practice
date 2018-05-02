@@ -1,4 +1,5 @@
 <!-- This file is for the use of PHP -->
+<!-- Partially referred to "http://www.runoob.com/php/php-tutorial.html" -->
 <!DOCTYPE HTML>
 <html>
     <head>
@@ -7,7 +8,13 @@
     </head>
     <body>
         <?php
-        echo "Hello World!";
-        ?>
+            echo "Hello World!";
+         ?>
+        <?php
+            $a = 5;
+            $b = 5;
+            $c = $a + $b;
+            echo $c;
+         ?>
     </body>
 </html>
