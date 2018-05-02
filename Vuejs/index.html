@@ -12,6 +12,9 @@
             <h2 v-bind:title="text">
                 {{ text1 }}
             </h2>
+            <p v-if="seen">
+                {{ text2 }}
+            </p>
         </div>
         <script type="text/javascript">
             "use strict"
@@ -26,11 +29,22 @@
             let app0 = new Vue ({
                 el: '#binding',
                 data: {
+                    seen: true,
                     text: "Data binding test, the time is " + new Date().toLocaleString(),
-                    text1: "Look at the dynamically binding instruction!"
+                    text1: "Look at the dynamically binding instruction!",
+                    text2: "Test the condition of Vuejs!"
                 }
             });
             app0.text = "The message is updated again!";
+            // app0.seen = false;
+
+            // let app1 = new Vue ({
+            //     el: '#condition',
+            //     data: {
+            //         seen: true,
+            //         text2: "Test the condition of Vuejs!"
+            //     }
+            // });
         </script>
     </body>
 </html>
