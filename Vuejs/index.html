@@ -44,6 +44,12 @@
             </span>
             </p>
         </div>
+
+        <div id="computing">
+            <h2>{{ hello }}</h2>
+            <h2>{{ computingHello }}</h2>
+        </div>
+
         <script type="text/javascript">
             "use strict"
             let app = new Vue ({
@@ -107,6 +113,20 @@
                     rawHTML: "<p style='color: blue'>Hello World!</p>"
                 }
             });
+
+            /* Computing attribute in this Vue instance */
+            let app5 = new Vue ({
+                el: '#computing',
+                data: {
+                    hello: "Chain Rule in Math"
+                },
+                computed: {
+                    computingHello: function () {
+                        return this.hello.split('').reverse().join('');
+                    }
+                }
+            });
+            app5.hello = "Want Something different?";
         </script>
     </body>
 </html>
