@@ -36,6 +36,14 @@
             <h2>{{ input }}</h2>
             <input v-model="input">
         </div>
+
+        <!-- Template: Raw HTML -->
+        <div id="app-4">
+            <p>Mustache Tag: {{ rawHTML }}</p>
+            <p>The following is produced by v-html: <span v-html="rawHTML">
+            </span>
+            </p>
+        </div>
         <script type="text/javascript">
             "use strict"
             let app = new Vue ({
@@ -90,6 +98,13 @@
                 el: '#app-3',
                 data: {
                     input: "initial one"
+                }
+            });
+
+            let app4 = new Vue ({
+                el: '#app-4',
+                data: {
+                    rawHTML: "<p style='color: blue'>Hello World!</p>"
                 }
             });
         </script>
