@@ -11,22 +11,30 @@
     <body>
         <h1>This page is for using the Vue Component</h1>
         <div id="component">
-            <button1></button1> <p><b>Aside</b>: Component Reuse: </p>
-            <!-- </br> -->
-            <button1></button1> <p>Each time one component is reused, </p>
-            <!-- </br> -->
-            <button1></button1> <p>A new instance is created. </p>
+            <ul>
+                <list1 v-for="item in items" v-bind:element="item"></list1>
+            </ul>
         </div>
     </body>
     <script type="text/javascript">
-        Vue.component('button1', {
-            data: function () {
-                return {
-                    count: 0
-                }
-            },
-            template: '<button v-on:click="count++">You already clicked {{count}} times. </button>'
+        Vue.component('list1', {
+            props: ['element'],
+            // data: function () {
+            //     return {
+            //         count: 0
+            //     }
+            // },
+            template: '<li>{{element.val}}</li>'
         });
-        new Vue ({el: '#component'});
+        let app = new Vue ({
+            el: '#component',
+            data: {
+                items: [
+                    {val: "Machine Learning"},
+                    {val: "Natural Language Processing"},
+                    {val: "Reinforcement Learning"}
+                ]
+            }
+        });
     </script>
 </html>
