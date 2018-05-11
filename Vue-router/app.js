@@ -2,8 +2,26 @@
 
 // 1. Define route components.
 // These can be imported from other files
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
+const one = {
+    template:
+        `<div>
+        </br>
+        <center>
+            <input v-model="welcome" style="width:300px; height=50px"></input>
+        </center>
+        <center><p>Check if this is what you want to say:</p></center>
+        <center><p>{{ welcome }}</p></center>
+        </div>`,
+    data: function () {
+        return {
+            welcome: "You are seeing this dynamically rendered page!"
+        };
+    }
+};
+
+const two = {
+    template: '<h3><center>This is the second view</center></h3>'
+};
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -11,8 +29,8 @@ const Bar = { template: '<div>bar</div>' }
 // Vue.extend(), or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/foo', component: Foo },
-  { path: '/bar', component: Bar }
+  { path: '/view1', component: one },
+  { path: '/view2', component: two }
 ]
 
 // 3. Create the router instance and pass the `routes` option
