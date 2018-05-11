@@ -1,3 +1,8 @@
+Install mocha:
+`
+$ sudo npm install -g mocha
+`
+
 If you want to run a specific file using mocha:
 
 `
