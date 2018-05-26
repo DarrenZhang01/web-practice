@@ -6,4 +6,8 @@ practice some basic concepts and tools of web
 ### promise
 ### nodeJS
 ### database (mongodb)
+### Vuejs
+### SQL
+### php
+### mocha
 ### template
