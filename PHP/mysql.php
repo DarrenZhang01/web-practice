@@ -16,10 +16,8 @@ try {
 
     echo $conn = null;
     echo "connection is closed!\n";
-}
-
-catch(PDOException $e)
-{
+    
+} catch (PDOException $e) {
     echo $e->getMessage();
 }
 ?>
