@@ -16,11 +16,6 @@ try {
 
     $sql = "select * from user_info;";
 
-    // $stmt = $conn->prepare($sql);
-    //
-    // $stmt->execute();
-    //
-    // $fetched = $stmt->fetchAll(PDO::FETCH_ASSOC);
     foreach($conn->query($sql) as $row) {
         echo $row[0] . "\n";
     }
