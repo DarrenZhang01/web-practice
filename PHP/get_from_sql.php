@@ -14,10 +14,10 @@ try {
     $conn->exec($sql);
     echo "database changed successfully to testPDO!\n";
 
-    $sql = "select name from user_info;";
+    $sql = "select * from users;";
 
     foreach($conn->query($sql) as $row) {
-        echo $row[0] . "\n";
+        echo $row[0] . " " . $row[1] . "\n";
     }
 
     echo $conn = null;
