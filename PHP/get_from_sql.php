@@ -14,7 +14,7 @@ try {
     $conn->exec($sql);
     echo "database changed successfully to testPDO!\n";
 
-    $sql = "select * from user_info;";
+    $sql = "select name from user_info;";
 
     foreach($conn->query($sql) as $row) {
         echo $row[0] . "\n";
